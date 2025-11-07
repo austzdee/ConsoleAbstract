@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleAbstract
 {
-    public class Employee : Person
+    public class Employee : Person, IQuittable
     {
         //implementing the abstract method
 
@@ -16,6 +16,10 @@ namespace ConsoleAbstract
         {
             Console.WriteLine("Full Name: " + FirstName + " " + LastName);
         }
-    
+        public void Quit()
+        {
+            Console.WriteLine(FirstName + " " + LastName + " has quitted.");
+        }
+
     }
 }

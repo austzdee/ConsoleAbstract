@@ -13,6 +13,12 @@ namespace ConsoleAbstract
             employee.FirstName = "Sample";
             employee.LastName = "Student";
             employee.SayName();
+
+            // using Polymorphism to create an object of IQuittable interface
+            IQuittable quittableEmployee = new Employee();
+            //calling the Quit method
+            quittableEmployee.Quit();
+
         }
     }
 }
