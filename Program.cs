@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Linq;
 
 namespace ConsoleAbstract
 {
@@ -26,13 +27,17 @@ namespace ConsoleAbstract
 
             };
 
+            // Using a lambda expression, make a list of all employees with an Id number greater than 5.
+            var filteredEmployees = employees.Where(emp => int.Parse(emp.Id.Substring(1)) > 5);
+            Console.WriteLine("Employees with ID greater than 5:");
 
-            foreach (Employee<string> emp in employees)
+            // Perform the same action again, but this time with a lambda expression.
+
+            var joeEmployees = employees.Where(emp => emp.FirstName == "Joe");
+
+            foreach (Employee<string> emp in joeEmployees)
             {
-                if (emp.FirstName == "Joe")
-                {
-                    Console.WriteLine($"Employee ID: {emp.Id}, Name: {emp.FirstName} {emp.LastName}");
-                }
+                Console.WriteLine($"Employee ID: {emp.Id}, Name: {emp.FirstName} {emp.LastName}");
             };
 
 
